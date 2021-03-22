@@ -1,8 +1,8 @@
 <?php
  class Database {
 
-    private $username="admin";
-    private $password="admin";
+    private $username="root";
+    private $password="azer8305";
     private $db_name="hospital_db";
     private $host="localhost";
     private $conx;
