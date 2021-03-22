@@ -132,4 +132,24 @@ class Patient
         }
         return false;
     }
+
+        // get single patient data
+        function read_by_doctor()
+        {
+    
+            // select all query
+            $query = "SELECT
+                        `id`, `name`, `phone`, `gender`, `health_condition`, `doctor_id`, `nurse_id`, `created`
+                    FROM
+                        " . $this->table_name . " 
+                    WHERE
+                        doctor_id= '" . $this->doctor_id . "'";
+    
+            // prepare query statement
+            $stmt = $this->conn->prepare($query);
+    
+            // execute query
+            $stmt->execute();
+            return $stmt;
+        }
 }
