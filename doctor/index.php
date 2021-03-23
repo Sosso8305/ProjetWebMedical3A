@@ -11,7 +11,7 @@ if (!isset($_SESSION['name'])) {
 if (isset($_GET['logout'])) {
   session_destroy();
   unset($_SESSION['name']);
-  header("location: doc_login.php");
+  header("location: /doctor/doc_login.php");
 }
 
 $dashboard = "Admin";

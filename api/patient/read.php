@@ -28,7 +28,9 @@ if($num>0){
             "name" => $name,
             "phone" => $phone,
             "gender" => $gender,
-            "health_contition" => $health_condition,
+            "health_condition" => $health_condition,
+            "doctor_id" => $doctor_id,
+            "nurse_id" => $nurse_id,
             "created" => $created
         );
         array_push($patient_arr["patients"], $patient_item);//[ [id=>1,name="sanae",], [id=>2, na], [] ]

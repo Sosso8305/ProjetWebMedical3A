@@ -70,9 +70,9 @@ class Patient
     function create()
     {
 
-        if ($this->isAlreadyExist()) {
-            return false;
-        }
+        // if ($this->isAlreadyExist()) {
+        //     return false;
+        // }
 
         // query to insert record
         $query = "INSERT INTO  " . $this->table_name . "

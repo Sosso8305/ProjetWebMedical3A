@@ -91,7 +91,7 @@
                 <div class="m-4 badge bg-primary"><?php echo $_SESSION['name']; ?></div>
                 <div> Status</div>
                 <!-- Status -->
-                <div class=""><a href="doctor/index.php?logout='1'"><i class="fa fa-circle text-success"></i> Logout</a>
+                <div class=""><a href="/doctor/index.php?logout='1'"><i class="fa fa-circle text-success"></i> Logout</a>
                 </div>
               <?php endif ?>
             </div>

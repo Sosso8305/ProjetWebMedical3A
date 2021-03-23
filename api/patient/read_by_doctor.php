@@ -10,7 +10,7 @@ $db = $database->getConnection();
 // prepare patient object
 $patient = new Patient($db);
  
-$patient->doctor_id = isset($_GET['id']) ? $_GET['id'] : die();
+$patient->doctor_id = 1;//isset($_GET['doctor_id']) ? $_GET['doctor_id'] : die();
 
 
 // query patient
@@ -19,11 +19,7 @@ $num = $stmt->rowCount();
 // check if more than 0 record found
 if($num>0){
  
-    // patients array
-    $patients_arr=array();//fonction : tableau vide: []
-    $patients_arr["patients"]=array(); // ["patients"=> [ ["id"=>1,"name"=>"doc", ],["id"=>2, ], ]]
-    //PDO::QQCHOSE=>QQCHOSE est un attribut statique de la classe PDO
-    //FETCH::ASSOC => [clé=>valeur, clé=>valeur]
+  
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); //$id=$row['id']; $name=$row['name'];$phone=$row['phone']
         $patient_item=array(
@@ -36,10 +32,9 @@ if($num>0){
             "nurse_id" => $nurse_id,
             "created" => $created
         );
-        array_push($patients_arr["patients"], $patient_item);//[ [id=>1,name="pierre",], [id=>2, na], [] ]
     }
     
-    echo json_encode($patients_arr["patients"]);//JSON: JavaScript Object Notation  
+    echo json_encode($patient_item);//JSON: JavaScript Object Notation  
     //JS: {clé1: valeur1,clé2:valeur2,}
     //JSON: {"clé":"valeur"}, exemple  { {"id":'1',"name":"pierre",}, {"id":2, name:"Marie"},{}}
 }
