@@ -55,7 +55,7 @@ include('../master.php');
       success: function(result) {
         if (result['status'] == true) {
           alert(result['message']);
-          window.location.href = '/doctor';
+          window.location.href = '/patient/myPatient.php';
         } else {
           alert(result['message']);
         }

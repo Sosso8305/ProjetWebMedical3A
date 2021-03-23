@@ -19,6 +19,8 @@ $num = $stmt->rowCount();
 // check if more than 0 record found
 if($num>0){
  
+    $patients_arr=array();
+    $patients_arr["patients"]=array();
   
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); //$id=$row['id']; $name=$row['name'];$phone=$row['phone']
@@ -32,9 +34,10 @@ if($num>0){
             "nurse_id" => $nurse_id,
             "created" => $created
         );
+        array_push($patients_arr["patients"], $patient_item);
     }
     
-    echo json_encode($patient_item);//JSON: JavaScript Object Notation  
+    echo json_encode($patients_arr["patients"]);//JSON: JavaScript Object Notation  
     //JS: {clé1: valeur1,clé2:valeur2,}
     //JSON: {"clé":"valeur"}, exemple  { {"id":'1',"name":"pierre",}, {"id":2, name:"Marie"},{}}
 }

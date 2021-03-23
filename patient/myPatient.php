@@ -60,7 +60,7 @@ include('../master.php');
   $(document).ready(function() {
     $.ajax({
       type: "GET",
-      url: "../api/patient/read.php",
+      url: "../api/patient/read_by_doctor.php",
       dataType: 'json',
       // data: {
       //       doctor_id: 1//$_SESSION['doctor_id']
@@ -81,3 +81,5 @@ include('../master.php');
       }
     });
   });
+
+  </script>
