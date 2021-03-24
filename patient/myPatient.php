@@ -55,16 +55,16 @@ include('../master.php');
 ?>
 
 <script>
-  
+  //alert($_SESSION['doctor_id']);
   // JQuery: AJAX : Appel Asynchrone
   $(document).ready(function() {
     $.ajax({
       type: "GET",
       url: "../api/patient/read_by_doctor.php",
       dataType: 'json',
-      // data: {
-      //       doctor_id: 1//$_SESSION['doctor_id']
-      //       },
+      data: {
+            doctor_id: <?php echo $_SESSION['doctor_id'] ?>
+            },
 
       success: function(data) {
         var response = "";

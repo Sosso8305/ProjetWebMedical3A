@@ -10,7 +10,7 @@ $db = $database->getConnection();
 // prepare patient object
 $patient = new Patient($db);
  
-$patient->doctor_id = 1;//isset($_GET['doctor_id']) ? $_GET['doctor_id'] : die();
+$patient->doctor_id = isset($_GET['doctor_id']) ? $_GET['doctor_id'] : die();
 
 
 // query patient
