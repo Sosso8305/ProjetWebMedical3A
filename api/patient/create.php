@@ -17,7 +17,7 @@ $patient->phone = $_POST['phone'];
 $patient->gender = $_POST['gender'];
 $patient->health_condition = $_POST['health_condition'];
 $patient->doctor_id = $_POST['doctor_id'];
-$patient->doctor_nurse = $_POST['doctor_nurse'];
+$patient->nurse_id = $_POST['nurse_id'];
 $patient->created = date('Y-m-d H:i:s');
 
 if ($patient->create()) {
@@ -31,7 +31,7 @@ if ($patient->create()) {
         "gender" => $patient->gender,
         "health_condition" => $patient->health_condition,
         "doctor_id" => $patient->doctor_id,
-        "doctor_nurse" => $patient->doctor_nurse
+        "nurse_id" => $patient->nurse_id
     );
 } else {
     $patient_arr = array(
