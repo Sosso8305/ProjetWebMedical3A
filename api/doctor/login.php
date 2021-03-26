@@ -28,7 +28,11 @@ if ($stmt->rowCount() == 1) {
 
     $_SESSION['name'] = $doctor->name;
     $_SESSION['success'] = "You are now logged in";
-    $_SESSION['doctor_id'] = $doctor->id;
+
+    $stmt = $doctor->getID_toMail();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $_SESSION['doctor_id'] = $row['id'];
     $doctor_arr = array(
         "status" => true,
         "message" => "Doctor, Successfully Authenticated!",

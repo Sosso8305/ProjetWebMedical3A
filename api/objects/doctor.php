@@ -173,4 +173,23 @@ class Doctor
         $stmt->execute();
         return $stmt;
     }
+
+    // get id
+    function getID_toMail(){
+
+        $query = "SELECT
+                    `id`
+                FROM
+                    " . $this->table_name . " 
+                WHERE
+                    email= '" . $this->email . "'";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // execute query
+        $stmt->execute();
+        return $stmt;
+
+    }
 }
