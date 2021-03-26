@@ -17,7 +17,7 @@ $content = '<div class="row">
       <div class="box-body">
         <div class="form-group">
           <label for="exampleInputName1">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter Name">
+          <input type="text" class="form-control" id="email" placeholder="Enter Email">
         </div>
         
         <div class="form-group">
@@ -46,7 +46,7 @@ include('../master.php');
       url: '../api/doctor/login.php',
       dataType: 'json',
       data: {
-        id: $("#name").val(),
+        mail: $("#mail").val(),
         password: $("#password").val()
       },
       error: function(result) {

@@ -18,7 +18,7 @@ $doctor = new Doctor($db);
 
 //Ce script doit avoir le moyen de récupérer ce identifiant
 
-$doctor->id = isset($_POST['id']) ? $_POST['id'] : die(); //http://monsite/doctor/single.php?
+$doctor->mail = isset($_POST['mail']) ? $_POST['mail'] : die(); //http://monsite/doctor/single.php?
 $doctor->password = isset($_POST['password']) ? $_POST['password'] : die();
 $doctor->password = base64_encode($_POST['password']);
 $stmt = $doctor->login();
