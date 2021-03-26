@@ -15,11 +15,10 @@ $patient = new Patient($db);
 $patient->id = $_POST['id'];
 $patient->name = $_POST['name'];
 $patient->phone = $_POST['phone'];
-$patient->email = $_POST['email'];
 $patient->gender = $_POST['gender'];
 $patient->health_condition = $_POST['health_condition'];
 $patient->doctor_id = $_POST['doctor_id'];
-$patient->doctor_nurse = $_POST['doctor_nurse'];
+$patient->nurse_id = $_POST['nurse_id'];
 
 if($patient->update()){
     $patient_arr=array(
@@ -30,7 +29,7 @@ if($patient->update()){
 else{
     $patient_arr=array(
         "status" => false,
-        "message" => "Email already exists!"
+        "message" => "Don't Updated!"
     );
 }
 print_r(json_encode($patient_arr));
