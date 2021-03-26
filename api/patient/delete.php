@@ -8,7 +8,7 @@ $database = new Database();
 $db = $database->getConnection();
  
 // On crée la variable $patient qui permettra de manipuler la base de données
-$patient = new patient($db);
+$patient = new Patient($db);
  
 // On passe en argument à la variable $patient la valeur ‘id’ de la variable //$_POST afin de manipuler exclusivement le docteur sélectionné
 $patient->id = $_POST['id'];
