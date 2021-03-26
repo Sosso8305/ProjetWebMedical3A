@@ -63,7 +63,7 @@ $content = '<div class="row">
         $.ajax(
         {
             type: "POST",
-            url: '../api/patient/update.php',
+            url: '../api/patient/create.php',
             dataType: 'json',
             data: {
                 name: $("#name").val(),
