@@ -87,7 +87,7 @@ session_start();
                 name: $("#name").val(),
                 phone: $("#phone").val(),
                 gender: $("input[name='gender']:checked").val(),
-                health_condition: $("#heath_condition").val(),
+                health_condition: $("#health_condition").val(),
                 doctor_id: <?php echo $_SESSION['doctor_id']; ?>,
                 nurse_id: $("#nurse_id").val()
             },
