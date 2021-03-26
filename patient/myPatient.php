@@ -82,4 +82,30 @@ include('../master.php');
     });
   });
 
+
+  function Remove(id) {
+    var result = confirm("Are you sure you want to Delete the Patient Record?");
+    if (result == true) {
+      $.ajax({
+        type: "POST",
+        url: '../api/patient/delete.php',
+        dataType: 'json',
+        data: {
+          id: id
+        },
+        error: function(result) {
+          alert(result.responseText);
+        },
+        success: function(result) {
+          if (result['status'] == true) {
+            alert("Successfully Removed Patient!");
+            window.location.href = '/patient/myPatient.php';
+          } else {
+            alert(result['message']);
+          }
+        }
+      });
+    }
+  }
+
   </script>
