@@ -11,10 +11,9 @@ $db = $database->getConnection();
 $patient = new Patient($db);
 
 // set patient property values
-$patient->id = $_POST['id'];
+
 $patient->name = $_POST['name'];
 $patient->phone = $_POST['phone'];
-$patient->email = $_POST['email'];
 $patient->gender = $_POST['gender'];
 $patient->health_condition = $_POST['health_condition'];
 $patient->doctor_id = $_POST['doctor_id'];
@@ -29,7 +28,6 @@ if ($patient->create()) {
         "id" => $patient->id,
         "name" => $patient->name,
         "phone" => $patient->phone,
-        "email" => $patient->email,
         "gender" => $patient->gender,
         "health_condition" => $patient->health_condition,
         "doctor_id" => $patient->doctor_id,
@@ -38,7 +36,7 @@ if ($patient->create()) {
 } else {
     $patient_arr = array(
         "status" => false,
-        "message" => "Email already exists!"
+        "message" => "failed created!"
     );
 }
 

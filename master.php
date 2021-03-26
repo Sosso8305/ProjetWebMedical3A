@@ -124,6 +124,17 @@
               <li><a href="/doctor/create.php">Create Doctor</a></li>
               <li><a href="/doctor">All Doctors</a></li>
             </ul>
+
+            <a href="#"><i class="fa fa-medkit"></i> <span>Patients</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="/patient/create.php">Create Patient</a></li>
+              <li><a href="/patient/myPatient.php">My Patients</a></li>
+            </ul>
+
           </li>
         </ul>
 
