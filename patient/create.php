@@ -1,5 +1,20 @@
 <?php 
 session_start();
+
+if (!isset($_SESSION['name'])) {
+  $_SESSION['msg'] = "You must log in first";
+  $host = $_SERVER['HTTP_HOST'];
+  $host = "http://" . $host . "/doctor/doc_login.php";
+  header('location: ' . $host);
+}
+
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['name']);
+  header("location: /doctor/doc_login.php");
+}
+
+$dashboard = "Doctor";
 $content = '<div class="row">
               <!-- left column -->
               <div class="col-md-12">
