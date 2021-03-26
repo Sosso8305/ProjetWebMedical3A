@@ -46,7 +46,7 @@ include('../master.php');
       url: '../api/doctor/login.php',
       dataType: 'json',
       data: {
-        mail: $("#mail").val(),
+        email: $("#email").val(),
         password: $("#password").val()
       },
       error: function(result) {
